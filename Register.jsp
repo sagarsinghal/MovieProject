@@ -4,7 +4,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
 /* Full-width input fields */
-input[type=text], input[type=password],input[type=date] {
+input[type=text], input[type=password],input[type=date],input[type=email] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -12,7 +12,7 @@ input[type=text], input[type=password],input[type=date] {
     border: none;
     background: #f1f1f1;
 }
-input[type=text]:focus, input[type=password]:focus,input[type=date]:focus {
+input[type=text]:focus, input[type=password]:focus,input[type=date]:focus ,input[type=email]:focus{
     background-color: #ddd;
     outline: none;
 }
