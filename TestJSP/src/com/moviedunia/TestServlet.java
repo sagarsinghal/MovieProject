@@ -57,7 +57,7 @@ public class TestServlet extends HttpServlet {
 				String sql = "insert into testProj values(customers_seq.NEXTVAL,'" + email + "','" + pass + "')";
 				int x = st.executeUpdate(sql);
 
-				request.setAttribute("email", email);
+				//request.setAttribute("email", email);
 				request.getRequestDispatcher("index.html").forward(request, response);
 			} catch (ClassNotFoundException c) {
 				System.out.println(c.getMessage());
