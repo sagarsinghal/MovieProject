@@ -6,7 +6,7 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box}
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password],input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

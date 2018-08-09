@@ -19,7 +19,7 @@ public class DBHelper {
 		try {
 			Class.forName(CLASSFORNAME);
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
-
+			con.setAutoCommit(false);
 			String sql = "INSERT INTO USER_DATA VALUES(customers_seq1.NEXTVAL,?,?,?,?,?)";
 
 			PreparedStatement psmt = con.prepareStatement(sql);
@@ -30,6 +30,7 @@ public class DBHelper {
 			psmt.setString(5, password);
 
 			count = psmt.executeUpdate();
+			con.commit();
 
 		} catch (ClassNotFoundException c) {
 			c.printStackTrace();
@@ -41,32 +42,27 @@ public class DBHelper {
 	}
 
 	public boolean LoginAuthenticate(String emailID, String password) {
-		boolean flag=false;
+		boolean flag = false;
 		try {
 			Class.forName(CLASSFORNAME);
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "scott", "tiger");
-			
+
 			Statement st = con.createStatement();
 
-			String sql = "SELECT email FROM USER_DATA";
+			String sql = "SELECT email,password FROM USER_DATA";
 
 			ResultSet rs = st.executeQuery(sql);
 
 			while (rs.next()) {
-				if (rs.getString(1).equals(emailID)) {
-					String PassSQL = "SELECT password FROM USER_DATA WHERE email='" + emailID + "'";
-					ResultSet rs1 = st.executeQuery(PassSQL);
+				if (rs.getString(1).equals(emailID) && rs.getString(2).equals(password)) {
+					flag = true;
+					break;
+				} else
+					flag = false;
+				System.out.println(rs.getString(1) + "    " + rs.getString(2) + flag);
+			}
 
-					if(rs1.getString(1).equals(password))
-					{
-						flag=true;						
-					}
-				}
-				else
-					flag=false;	
-			}	//end while
-			
-		}		//end try
+		} // end try
 		catch (ClassNotFoundException c) {
 			c.printStackTrace();
 		} catch (SQLException e) {
