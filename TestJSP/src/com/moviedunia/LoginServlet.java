@@ -44,6 +44,8 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		DBHelper db = new DBHelper();
+			
+			
 		if (db.LoginAuthenticate(emailID, password)) {
 			request.setAttribute("LOGIN", "SUCCESS_LOGIN");
 			request.getRequestDispatcher("Movies.jsp").forward(request, response);
