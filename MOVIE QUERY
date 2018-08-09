@@ -9,3 +9,8 @@
    RELEASE_DATE VARCHAR2(10), 
    DES VARCHAR2(100),
    RATING VARCHAR2(10));   
+
+
+INSERT INTO "SCOTT"."MOVIE" (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRODUCER, CASTS, RELEASE_DATE, DES, RATING) VALUES ('001', 'ANT-MAN AND THE WASP', 'https://youtu.be/8_rTIAOohas', 'https://in.bmscdn.com/iedb/movies/images/website/poster/large/ant-man-and-the-wasp-et00069345-17-01-2018-11-20-37.jpg', 'Peyton Reed', 'Kevin Feige', 'Paul Rudd, Evangeline Lillly', ' 25.06.2018', 'Scott Lang is grappling with the consequences of his choices as both a superhero and a father. Approached by Hope van Dyne and Dr. Hank Pym, Lang must once again don the Ant-Man suit and fight alongside the Wasp. The urgent mission soon leads to secret revelations from the past as the dynamic duo finds itself in an epic battle against a powerful new enemy.', '7.4/10')
+ORA-12899: value too large for column "SCOTT"."MOVIE"."RELEASE_DATE" (actual: 11, maximum: 10)
+ORA-06512: at line 1
