@@ -14,3 +14,38 @@
 INSERT INTO "SCOTT"."MOVIE" (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRODUCER, CASTS, RELEASE_DATE, DES, RATING) VALUES ('001', 'ANT-MAN AND THE WASP', 'https://youtu.be/8_rTIAOohas', 'https://in.bmscdn.com/iedb/movies/images/website/poster/large/ant-man-and-the-wasp-et00069345-17-01-2018-11-20-37.jpg', 'Peyton Reed', 'Kevin Feige', 'Paul Rudd, Evangeline Lillly', ' 25.06.2018', 'Scott Lang is grappling with the consequences of his choices as both a superhero and a father. Approached by Hope van Dyne and Dr. Hank Pym, Lang must once again don the Ant-Man suit and fight alongside the Wasp. The urgent mission soon leads to secret revelations from the past as the dynamic duo finds itself in an epic battle against a powerful new enemy.', '7.4/10')
 ORA-12899: value too large for column "SCOTT"."MOVIE"."RELEASE_DATE" (actual: 11, maximum: 10)
 ORA-06512: at line 1
+
+INSERT INTO MOVIE (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRODUCER, CASTS, RELEASE_DATE, DES, RATING) VALUES 
+('002', 'MISSION:IMPOSSIBLE FALLOUT', 
+'https://youtu.be/wb49-oV0F78', 
+'https://in.bmscdn.com/iedb/movies/images/website/poster/large/mission-impossible-6-et00040397-04-10-2016-04-13-03.jpg', 
+'Christopher McQuarrie', 
+'Tom Cruise,Jake Myers', 
+'Tom Cruise,Rebecca Fergunis', 
+' 12.07.2018', 
+'In the 6th installment of Mission: Impossible series -- As the IMFs best man Ethan Hunts mission goes wrong, the credibility of the agency is questioned by the CIA and the world is faced with a catastrophic threat. Hunt takes it upon himself to save the world and win back the trust that his government had bestowed upon him. Will he and his team fallout or will they succeed in this impossible mission?'
+,'8.3/10')
+
+
+INSERT INTO MOVIE (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRODUCER, CASTS, RELEASE_DATE, DES, RATING) VALUES 
+('003', 'AVENGERS:INFINITY WAR', 
+'https://www.youtube.com/watch?v=6ZfuNTqbHE8', 
+'https://en.wikipedia.org/wiki/Avengers:_Infinity_War#/media/File:Avengers_Infinity_War_poster.jpg', 
+'Anthony Russo, Joe Russo', 
+'Kevin Feige', 
+'Robert Downey Jr.,Chris Hemsworth,Mark Ruffalo', 
+'27.04.2018', 
+'Iron Man, Thor, the Hulk and the rest of the Avengers unite to battle their most powerful enemy yet -- the evil Thanos. On a mission to collect all six Infinity Stones, Thanos plans to use the artifacts to inflict his twisted will on reality. The fate of the planet and existence itself has never been more uncertain as everything the Avengers have fought for has led up to this moment.'
+,'8.7/10')
+
+INSERT INTO MOVIE (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRODUCER, CASTS, RELEASE_DATE, DES, RATING) VALUES 
+('004', 'Extinction', 
+'https://www.hollywoodreporter.com/video/extinction-trailer-1126355', 
+'https://www.imdb.com/title/tt3201640/mediaviewer/rm3914745600?ref_=tt_ov_i', 
+'Ben Young', 
+'David Hoberman,Nathan Kahane', 
+'Michael Peña,Lizzy Caplan', 
+'27.07.2018', 
+'A father has a recurring dream of losing his family. His nightmare turns into reality when the planet is invaded by a force bent on destruction. Fighting for their lives, he comes to realise an unknown strength to keep them safe from harm.'
+,'5.8/10')
+
