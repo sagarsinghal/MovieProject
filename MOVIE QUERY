@@ -49,3 +49,16 @@ INSERT INTO MOVIE (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRO
 'A father has a recurring dream of losing his family. His nightmare turns into reality when the planet is invaded by a force bent on destruction. Fighting for their lives, he comes to realise an unknown strength to keep them safe from harm.'
 ,'5.8/10')
 
+
+INSERT INTO MOVIE (MOVIE_ID, MOVIE_NAME, TRAILER_LINK, IMAGE_LINK, DIRECTOR, PRODUCER, CASTS, RELEASE_DATE, DES, RATING) VALUES 
+('005', 'Incredibles 2', 
+'https://www.youtube.com/watch?v=Mh2D9UZMcI0', 
+'https://www.imdb.com/title/tt3606756/mediaviewer/rm985091584', 
+'Brad Bird', 
+'John Walker,Nicole Grindle', 
+'Craig T. Nelson,Holly Hunter', 
+'05.06.2018', 
+'Craig T. Nelson as Bob Parr / Mr. Incredible, who possesses super strength and limited invulnerability. Holly Hunter as Helen Parr / Elastigirl, who has the ability to stretch her body into many shapes and forms.'
+,'8/10')
+
+
