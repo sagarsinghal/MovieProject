@@ -1,0 +1,11 @@
+  CREATE TABLE BOOK_TICKETS
+  (
+    ticketID number(10) PRIMARY KEY,
+    user_id varchar2(10),
+    movie_id number(10),
+    show_date varchar(20),
+    show_time date,
+    no_seats number(3),
+    seat_type varchar(1),
+    total_amount number(7,2)    
+  );
