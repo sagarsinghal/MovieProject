@@ -1,0 +1,25 @@
+  CREATE TABLE AvailableSeats
+  (
+    movie_id number(10) ,
+    show_date varchar(20),
+    show_time varchar(10),
+    available_seats number(3)
+)
+
+CREATE SEQUENCE ticketIDGenerator
+  MINVALUE 0000000000001
+  MAXVALUE 9999999999999
+  START WITH 0000000000001
+  INCREMENT BY 1
+  CACHE 20;
+
+  CREATE TABLE BOOK_TICKETS
+  (
+    ticketID number(13) PRIMARY KEY,
+    user_id varchar2(10),
+    movie_id number(10),
+    show_date varchar(20),
+    show_time varchar(10),
+    no_seats number(3),
+    total_amount number(7,2)    
+  );
