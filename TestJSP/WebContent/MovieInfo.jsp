@@ -8,12 +8,9 @@
 <title>Your Movie Details</title>
 </head>
 <body>
-	<% request.getParameter("movieDetails");
-		
-		
-		%>
-	<h1>OLA
-	
+	<% Movie m1 = (Movie)request.getAttribute("movieDetails");	%>
+	<h1>
+	<%out.println(m1.getMovieID()); %>
 	
 	</h1>
 	
