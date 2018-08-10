@@ -1,11 +1,13 @@
 package com.moviedunia;
 
 import java.io.IOException;
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginServlet
@@ -44,10 +46,14 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		DBHelper db = new DBHelper();
-			
+		Login m = new Login();
 			
 		if (db.LoginAuthenticate(emailID, password)) {
-			request.setAttribute("LOGIN", "SUCCESS_LOGIN");
+			
+			
+			
+			HttpSession ses = request.getSession(true);
+			ses.setAttribute("user_id", String.valueOf(m.getUser_id()));
 			request.getRequestDispatcher("Movies.jsp").forward(request, response);
 		}
 		else
@@ -56,7 +62,9 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 			
 			}
-		
+
+
+
 	}
 
 }

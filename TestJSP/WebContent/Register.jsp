@@ -106,7 +106,7 @@ button:hover {
     <input type="text" placeholder="Last Name" name="lname" required>
     
     <label for="dob"><b>Date Of Birth</b></label>
-    <input type="date"  name="dob" required>
+    <input type="date"  name="dob" min="2001-01-02" required>
 <br>
     <label for="email"><b>Email</b></label>
     <input type="email" placeholder="Enter Email" name="email" required>

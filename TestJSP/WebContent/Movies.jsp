@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@page import="com.moviedunia.DBHelper, java.util.*"%>
+<%@page import="com.moviedunia.*, java.util.*"%>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,8 +105,8 @@ to {
 
 .img {
 	height: 250px;
-	width: 350px; 
-	border : 2px solid red;
+	width: 350px;
+	border: 2px solid red;
 	border-radius: 5px;
 	border: 2px solid red;
 }
@@ -133,6 +133,15 @@ to {
 </style>
 </head>
 <body>
+	<%
+	String ses = (String)session.getAttribute("user_id");
+		System.out.println(ses);
+	if(ses==null){
+		out.println("Login First <a href=\"index.jsp\">Login<a>");
+		return;
+	}
+	
+	%>
 
 
 	<div class="slideshow-container">
@@ -168,18 +177,21 @@ to {
 			List allMovies = db.getAllMovies();
 
 			for (int i = 0; i < allMovies.size(); i++) {
-				request.setAttribute("movieID",(i+1));
-				
-				String output="<img style=\"height: 350px; width: 250px;  border-radius: 5px;	border: 4px solid black;\" src=\"" + allMovies.get(i)
-				+ "\"  style=\"width: 25%\" >&nbsp;&nbsp;";
-				
-// 				String output="<a href=\"MovieHandlerServlet\"> <img style=\"height: 350px; width: 250px;  border-radius: 5px;	border: 4px solid black;\" src=\"" + allMovies.get(i)
-// 				+ "\"  style=\"width: 25%\"> </a>&nbsp;&nbsp;&nbsp;";
-				out.println(output); 
+				//request.setAttribute("movieID",(i+1));
+
+				// 				String output="<div id=\"div"+i+"\"><img style=\"height: 350px; width: 250px;  border-radius: 5px;	border: 4px solid black;\" src=\"" + allMovies.get(i)
+				// 				+ "\"  style=\"width: 25%\" ><input type=submit value=\"bookmovie"+i+"\"";
+
+				String output = "<a href=\"MovieHandlerServlet?id=" + (i + 1)
+						+ "\"> <img style=\"height: 350px; width: 250px;  border-radius: 5px;	border: 4px solid black;\" src=\""
+						+ allMovies.get(i) + "\"  style=\"width: 25%\"> </a>&nbsp;&nbsp;&nbsp;";
+				out.println(output);
 			}
 		%>
-		
-		<hr><footer draggable="false" id="footer" style="height:50px;">  </footer>
+
+		<hr>
+		<footer draggable="false" id="footer" style="height: 50px;">
+		</footer>
 	</div>
 
 	<script>
@@ -204,7 +216,6 @@ to {
 			dots[slideIndex - 1].className += " active";
 			setTimeout(showSlides, 3000); // Change image every 2 seconds
 		}
-
 	</script>
 
 

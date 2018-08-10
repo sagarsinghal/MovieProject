@@ -30,8 +30,8 @@ public class MovieHandlerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		String MovieID = request.getParameter("movieID");
-		System.out.println(MovieID);
+		String MovieID = request.getParameter("id");
+		System.out.println("in servlet "+MovieID);
 		
 		DBHelper db = new DBHelper();
 		Movie m1 = db.getMovieDetails(MovieID);
